@@ -90,7 +90,7 @@ VectorXd Tools::fromCartesianToPolar(const VectorXd& x_state) {
   } else {
       z_pred << dist,
                 atan2(x_state[1], x_state[0]),
-                (x_state[0] * x_state[2] + x_state[1] * x_state[3]) / distance;
+                (x_state[0] * x_state[2] + x_state[1] * x_state[3]) / dist;
   }
   return z_pred;
 }
