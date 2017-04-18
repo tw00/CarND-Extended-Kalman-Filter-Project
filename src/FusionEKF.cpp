@@ -62,7 +62,7 @@ FusionEKF::FusionEKF() {
         0, 0, 1, 0,
         0, 0, 0, 1;
 
-  // TODO: Noise matrix
+  // Noise matrix
   Q_ = MatrixXd(4, 4);
 
   //set the acceleration noise components

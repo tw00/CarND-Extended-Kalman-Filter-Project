@@ -11,8 +11,6 @@ void KalmanFilter::Init(VectorXd &x_in, MatrixXd &P_in, MatrixXd &F_in, MatrixXd
   x_ = x_in;
   P_ = P_in;
   F_ = F_in;
-//  H_ = H_in;
-//  R_ = R_in;
   Q_ = Q_in;
 }
 
@@ -55,9 +53,6 @@ void KalmanFilter::UpdateEKF(const VectorXd &z, const VectorXd &z_pred) {
   /**
     * update the state by using Extended Kalman Filter equations
     */
-    // TODO H und Ht übernehmen
-    // TODO: z mit Funktion
-//	VectorXd z_pred = h(x_); // TODO
 	VectorXd y = z - z_pred;
 	MatrixXd Ht = H_.transpose();
 	MatrixXd S = H_ * P_ * Ht + R_;
